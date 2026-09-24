@@ -7,20 +7,19 @@
 查看仓库中可安装的 Skills：
 
 ```bash
-pnpx skills add . --list
+pnpx skills add Rewrite0/skills --list
 ```
 
 安装指定 Skill：
 
 ```bash
-pnpx skills add . --skill tdd --global
-pnpx skills ls -g
+pnpx skills add Rewrite0/skills --skill tdd
 ```
 
-安装全部 Skills：
+交互式安装：
 
 ```bash
-pnpx skills add . --skill '*' --global
+pnpx skills add Rewrite0/skills
 ```
 
 ## 目录结构
