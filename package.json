@@ -1,0 +1,27 @@
+{
+  "name": "my-skills",
+  "version": "0.1.0",
+  "private": true,
+  "description": "个人 Agent Skills 聚合仓库",
+  "type": "module",
+  "scripts": {
+    "lint": "oxlint scripts",
+    "lint:fix": "oxlint --fix scripts",
+    "check": "pnpm run skills:list && pnpm run skills:check",
+    "skills:add": "skills add",
+    "skills:install": "skills add .",
+    "skills:list": "skills add . --list",
+    "skills:check": "node scripts/check-skills.mjs",
+    "sources:add": "node scripts/add-source.mjs",
+    "sources:init": "git submodule update --init --recursive",
+    "sync": "node scripts/sync-skills.mjs",
+    "update": "node scripts/sync-skills.mjs --update"
+  },
+  "devDependencies": {
+    "oxlint": "1.78.0",
+    "skills": "1.5.22"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}

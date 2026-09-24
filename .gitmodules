@@ -1,0 +1,33 @@
+[submodule "sources/antfu-skills"]
+	path = sources/antfu-skills
+	url = https://github.com/antfu/skills.git
+[submodule "sources/alova-skills"]
+	path = sources/alova-skills
+	url = https://github.com/alovajs/skills.git
+[submodule "sources/mattpocock-skills"]
+	path = sources/mattpocock-skills
+	url = https://github.com/mattpocock/skills.git
+[submodule "sources/vercel-skills"]
+	path = sources/vercel-skills
+	url = https://github.com/vercel-labs/skills.git
+[submodule "sources/astrolicious-agent-skills"]
+	path = sources/astrolicious-agent-skills
+	url = https://github.com/astrolicious/agent-skills.git
+[submodule "sources/sequential-thinking-skill"]
+	path = sources/sequential-thinking-skill
+	url = https://github.com/thedotmack/sequential-thinking-skill.git
+[submodule "sources/ui-ux-pro-max-skill"]
+	path = sources/ui-ux-pro-max-skill
+	url = https://github.com/nextlevelbuilder/ui-ux-pro-max-skill.git
+[submodule "sources/open-circle-agent-skills"]
+	path = sources/open-circle-agent-skills
+	url = https://github.com/open-circle/agent-skills.git
+[submodule "sources/juliusbrussee-caveman"]
+	path = sources/juliusbrussee-caveman
+	url = https://github.com/juliusbrussee/caveman
+[submodule "sources/denoland-skills"]
+	path = sources/denoland-skills
+	url = https://github.com/denoland/skills
+[submodule "sources/anthropics-skills"]
+	path = sources/anthropics-skills
+	url = https://github.com/anthropics/skills

@@ -1,0 +1,130 @@
+{
+  "alova-client-usage": {
+    "submodule": "sources/alova-skills",
+    "skillPath": "skills/alova-client-usage"
+  },
+  "alova-server-usage": {
+    "submodule": "sources/alova-skills",
+    "skillPath": "skills/alova-server-usage"
+  },
+  "alova-wormhole-usage": {
+    "submodule": "sources/alova-skills",
+    "skillPath": "skills/alova-wormhole-usage"
+  },
+  "antfu": {
+    "submodule": "sources/antfu-skills",
+    "skillPath": "skills/antfu"
+  },
+  "pinia": {
+    "submodule": "sources/antfu-skills",
+    "skillPath": "skills/pinia"
+  },
+  "pnpm": {
+    "submodule": "sources/antfu-skills",
+    "skillPath": "skills/pnpm"
+  },
+  "tsdown": {
+    "submodule": "sources/antfu-skills",
+    "skillPath": "skills/tsdown"
+  },
+  "turborepo": {
+    "submodule": "sources/antfu-skills",
+    "skillPath": "skills/turborepo"
+  },
+  "unocss": {
+    "submodule": "sources/antfu-skills",
+    "skillPath": "skills/unocss"
+  },
+  "vite": {
+    "submodule": "sources/antfu-skills",
+    "skillPath": "skills/vite"
+  },
+  "vitest": {
+    "submodule": "sources/antfu-skills",
+    "skillPath": "skills/vitest"
+  },
+  "vue": {
+    "submodule": "sources/antfu-skills",
+    "skillPath": "skills/vue"
+  },
+  "vue-best-practices": {
+    "submodule": "sources/antfu-skills",
+    "skillPath": "skills/vue-best-practices"
+  },
+  "vue-router-best-practices": {
+    "submodule": "sources/antfu-skills",
+    "skillPath": "skills/vue-router-best-practices"
+  },
+  "vue-testing-best-practices": {
+    "submodule": "sources/antfu-skills",
+    "skillPath": "skills/vue-testing-best-practices"
+  },
+  "vueuse-functions": {
+    "submodule": "sources/antfu-skills",
+    "skillPath": "skills/vueuse-functions"
+  },
+  "web-design-guidelines": {
+    "submodule": "sources/antfu-skills",
+    "skillPath": "skills/web-design-guidelines"
+  },
+  "grill-me": {
+    "submodule": "sources/mattpocock-skills",
+    "skillPath": "skills/productivity/grill-me"
+  },
+  "grilling": {
+    "submodule": "sources/mattpocock-skills",
+    "skillPath": "skills/productivity/grilling"
+  },
+  "grill-with-docs": {
+    "submodule": "sources/mattpocock-skills",
+    "skillPath": "skills/engineering/grill-with-docs"
+  },
+  "domain-modeling": {
+    "submodule": "sources/mattpocock-skills",
+    "skillPath": "skills/engineering/domain-modeling"
+  },
+  "handoff": {
+    "submodule": "sources/mattpocock-skills",
+    "skillPath": "skills/productivity/handoff"
+  },
+  "tdd": {
+    "submodule": "sources/mattpocock-skills",
+    "skillPath": "skills/engineering/tdd"
+  },
+  "codebase-design": {
+    "submodule": "sources/mattpocock-skills",
+    "skillPath": "skills/engineering/codebase-design"
+  },
+  "find-skills": {
+    "submodule": "sources/vercel-skills",
+    "skillPath": "skills/find-skills"
+  },
+  "astro": {
+    "submodule": "sources/astrolicious-agent-skills",
+    "skillPath": "skills/astro"
+  },
+  "ui-ux-pro-max": {
+    "submodule": "sources/ui-ux-pro-max-skill",
+    "skillPath": ".claude/skills/ui-ux-pro-max"
+  },
+  "valibot": {
+    "submodule": "sources/open-circle-agent-skills",
+    "skillPath": "skills/valibot"
+  },
+  "caveman": {
+    "submodule": "sources/juliusbrussee-caveman",
+    "skillPath": "skills/caveman"
+  },
+  "deno": {
+    "submodule": "sources/denoland-skills",
+    "skillPath": "skills/deno"
+  },
+  "sequential-thinking": {
+    "submodule": "sources/sequential-thinking-skill",
+    "skillPath": "sequential-thinking"
+  },
+  "skill-creator": {
+    "submodule": "sources/anthropics-skills",
+    "skillPath": "skills/skill-creator"
+  }
+}
