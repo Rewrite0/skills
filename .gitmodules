@@ -31,3 +31,6 @@
 [submodule "sources/anthropics-skills"]
 	path = sources/anthropics-skills
 	url = https://github.com/anthropics/skills
+[submodule "sources/chokcoco-coco-skill-hub"]
+	path = sources/chokcoco-coco-skill-hub
+	url = https://github.com/chokcoco/coco-skill-hub

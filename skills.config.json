@@ -23,14 +23,6 @@
     "submodule": "sources/antfu-skills",
     "skillPath": "skills/pnpm"
   },
-  "tsdown": {
-    "submodule": "sources/antfu-skills",
-    "skillPath": "skills/tsdown"
-  },
-  "turborepo": {
-    "submodule": "sources/antfu-skills",
-    "skillPath": "skills/turborepo"
-  },
   "unocss": {
     "submodule": "sources/antfu-skills",
     "skillPath": "skills/unocss"
@@ -46,26 +38,6 @@
   "vue": {
     "submodule": "sources/antfu-skills",
     "skillPath": "skills/vue"
-  },
-  "vue-best-practices": {
-    "submodule": "sources/antfu-skills",
-    "skillPath": "skills/vue-best-practices"
-  },
-  "vue-router-best-practices": {
-    "submodule": "sources/antfu-skills",
-    "skillPath": "skills/vue-router-best-practices"
-  },
-  "vue-testing-best-practices": {
-    "submodule": "sources/antfu-skills",
-    "skillPath": "skills/vue-testing-best-practices"
-  },
-  "vueuse-functions": {
-    "submodule": "sources/antfu-skills",
-    "skillPath": "skills/vueuse-functions"
-  },
-  "web-design-guidelines": {
-    "submodule": "sources/antfu-skills",
-    "skillPath": "skills/web-design-guidelines"
   },
   "grill-me": {
     "submodule": "sources/mattpocock-skills",
@@ -119,12 +91,16 @@
     "submodule": "sources/denoland-skills",
     "skillPath": "skills/deno"
   },
-  "sequential-thinking": {
+  "think-out-loud": {
     "submodule": "sources/sequential-thinking-skill",
-    "skillPath": "sequential-thinking"
+    "skillPath": "think-out-loud"
   },
   "skill-creator": {
     "submodule": "sources/anthropics-skills",
     "skillPath": "skills/skill-creator"
+  },
+  "coco-humanizer-zh": {
+    "submodule": "sources/chokcoco-coco-skill-hub",
+    "skillPath": ".agents/skills/coco-humanizer-zh"
   }
 }
