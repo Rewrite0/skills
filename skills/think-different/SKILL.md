@@ -1,9 +1,9 @@
 ---
-name: think-out-loud
-description: "Make complex work reviewable as it happens through concise, visible working notes: assumptions, evidence, uncertainty, alternatives, decisions, and revisions. Use when the user asks to think out loud, wants to follow or steer an investigation, or would benefit from reviewing consequential choices during an uncertain task."
+name: think-different
+description: "Make complex work reviewable as it happens through concise, visible working notes: assumptions, evidence, uncertainty, alternatives, decisions, and revisions. Use when the user asks to think differently, wants to follow or steer an investigation, or would benefit from reviewing consequential choices during an uncertain task."
 ---
 
-# Think Out Loud
+# Think Different
 
 Keep the user involved while the work is happening. Publish concise summaries of the current approach, supporting evidence, uncertainties, and decisions in the conversation so the user can question or redirect them.
 
@@ -35,7 +35,7 @@ Read [references/example-session.md](references/example-session.md) for an examp
 
 ## Live view when requested
 
-When the user asks to follow the task in a live UI, use the repository's live app described in [the project README](https://github.com/claude-mem/think-out-loud#live-view-and-replies). Start `bun live/server.ts` from the repository if a view is not already running, and open its local URL. The app uses the pinned I Have ADHD prompt to rewrite each public note for easy reading, retains the original, and lets the user reply to the specific note.
+When the user asks to follow the task in a live UI, use the repository's live app described in [the project README](https://github.com/claude-mem/think-different#live-view-and-replies). Start `bun live/server.ts` from the repository if a view is not already running, and open its local URL. The app uses the pinned I Have ADHD prompt to rewrite each public note for easy reading, retains the original, and lets the user reply to the specific note.
 
 Publish meaningful notes using the notebook script's `--live http://127.0.0.1:4317 --session TASK` flags alongside the normal entry flags. Use one session and one state path per task. The app is separate from the installed skill folder; a skill installation alone does not start the server.
 
@@ -58,8 +58,8 @@ Use a separate state path for each task. Create its parent directory first. Incl
 Run from the skill directory, or substitute the script's absolute path:
 
 ```bash
-bun scripts/think.ts --state /path/to/task/work/think-out-loud.json --reset
-bun scripts/think.ts --state /path/to/task/work/think-out-loud.json --thought "The failing requests follow token refresh; successful requests still need comparison." --thoughtNumber 1 --totalThoughts 3 --nextThoughtNeeded true
+bun scripts/think.ts --state /path/to/task/work/think-different.json --reset
+bun scripts/think.ts --state /path/to/task/work/think-different.json --thought "The failing requests follow token refresh; successful requests still need comparison." --thoughtNumber 1 --totalThoughts 3 --nextThoughtNeeded true
 ```
 
 The legacy `--thought` names refer to public working notes. Use increasing entry numbers. `totalThoughts` is an estimate of notebook entries, not a quota or a claim about internal reasoning depth; adjust it as the work changes.
@@ -80,8 +80,8 @@ The legacy `--thought` names refer to public working notes. Use increasing entry
 Each submitted entry requires `--thought`, `--thoughtNumber`, `--totalThoughts`, and `--nextThoughtNeeded`. Earlier entries remain in history until reset. The script raises `totalThoughts` if a new entry exceeds the estimate.
 
 ```bash
-bun scripts/think.ts --state /path/to/task/work/think-out-loud.json --thought "Fresh sessions fail too; token refresh alone does not explain the issue." --thoughtNumber 2 --totalThoughts 4 --nextThoughtNeeded true --isRevision --revisesThought 1
-bun scripts/think.ts --state /path/to/task/work/think-out-loud.json --status
+bun scripts/think.ts --state /path/to/task/work/think-different.json --thought "Fresh sessions fail too; token refresh alone does not explain the issue." --thoughtNumber 2 --totalThoughts 4 --nextThoughtNeeded true --isRevision --revisesThought 1
+bun scripts/think.ts --state /path/to/task/work/think-different.json --status
 ```
 
 Set `--nextThoughtNeeded false` when the current investigation has reached its outcome, including a clearly stated blocker or unresolved result. Do not manufacture confidence to close the notebook.

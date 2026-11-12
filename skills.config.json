@@ -91,9 +91,9 @@
     "submodule": "sources/denoland-skills",
     "skillPath": "skills/deno"
   },
-  "think-out-loud": {
+  "think-different": {
     "submodule": "sources/sequential-thinking-skill",
-    "skillPath": "think-out-loud"
+    "skillPath": "think-different"
   },
   "skill-creator": {
     "submodule": "sources/anthropics-skills",

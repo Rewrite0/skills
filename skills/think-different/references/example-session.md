@@ -2,7 +2,7 @@
 
 This is an illustrative conversation. The observations and test outcomes below are hypothetical. Notes appear in the conversation while the work happens; a notebook can optionally save the same public notes.
 
-**User:** Investigate intermittent login failures. Think out loud so I can follow and steer.
+**User:** Investigate intermittent login failures. Think differently so I can follow and steer.
 
 **Assistant — initial framing:** I’ll compare failing and successful sessions. Token refresh is one plausible cause, but I have not checked the logs yet. First I’ll locate the failure stage.
 

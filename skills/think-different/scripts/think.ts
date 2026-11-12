@@ -1,6 +1,6 @@
 #!/usr/bin/env bun
 /**
- * think-out-loud visible working notes.
+ * think-different visible working notes.
  *
  * Keeps working notes, revisions, and branches as persistent state across invocations.
  * Returns progress after each entry so the work can be reviewed as it happens.
