@@ -8,21 +8,25 @@
   "scripts": {
     "lint": "oxlint scripts",
     "lint:fix": "oxlint --fix scripts",
-    "check": "pnpm run skills:list && pnpm run skills:check",
+    "typecheck": "tsc --noEmit",
+    "check": "pnpm run typecheck && pnpm run skills:list && pnpm run skills:check",
     "skills:add": "skills add",
     "skills:install": "skills add .",
     "skills:list": "skills add . --list",
-    "skills:check": "node scripts/check-skills.mjs",
-    "sources:add": "node scripts/add-source.mjs",
-    "sources:init": "git submodule update --init --recursive",
-    "sync": "node scripts/sync-skills.mjs",
-    "update": "node scripts/sync-skills.mjs --update"
+    "skills:check": "node scripts/cli.ts check",
+    "sources:add": "node scripts/cli.ts add",
+    "sources:init": "node scripts/cli.ts init",
+    "sources:update": "node scripts/cli.ts sources-update",
+    "sync": "node scripts/cli.ts sync",
+    "update": "node scripts/cli.ts update"
   },
   "devDependencies": {
+    "@types/node": "^22.20.5",
     "oxlint": "1.78.0",
-    "skills": "1.5.22"
+    "skills": "1.5.22",
+    "typescript": "^7.0.2"
   },
   "engines": {
-    "node": ">=18"
+    "node": ">=22.18.0"
   }
 }

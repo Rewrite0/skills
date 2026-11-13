@@ -21,10 +21,9 @@ jobs:
     timeout-minutes: 20
 
     steps:
-      - name: 检出仓库与子模块
+      - name: 检出仓库
         uses: actions/checkout@v4
         with:
-          submodules: recursive
           fetch-depth: 0
 
       - name: 安装 pnpm
@@ -33,7 +32,7 @@ jobs:
       - name: 安装 Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: "22"
+          node-version: "22.18.0"
 
       - name: 获取 pnpm store 路径
         id: pnpm-store
@@ -62,8 +61,6 @@ jobs:
         uses: peter-evans/create-pull-request@v7
         with:
           add-paths: |
-            .gitmodules
-            sources
             skills
           branch: automation/update-skills
           delete-branch: true
@@ -72,8 +69,8 @@ jobs:
           body: |
             定时检查发现外部 Skill 存在更新。
 
-            - 更新 Git submodule 指针
-            - 同步发布目录
+            - 获取外部来源的最新版本
+            - 仅同步 meta.json 中选取的 Skill
             - 已运行 `pnpm run check`
 
             请在合并前检查上游 Skill 的行为变化。

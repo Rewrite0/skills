@@ -1,133 +1,100 @@
 # 我的 Skills 仓库
 
-个人 Agent Skills 聚合仓库
+个人 Agent Skills 集合，发布内容位于 `skills/`。
 
-## 使用
-
-查看仓库中可安装的 Skills：
+## 安装
 
 ```bash
+# 查看可安装的 Skill
 pnpx skills add Rewrite0/skills --list
-```
-
-安装指定 Skill：
-
-```bash
+# 安装指定 Skill
 pnpx skills add Rewrite0/skills --skill tdd
-```
-
-交互式安装：
-
-```bash
+# 交互式安装
 pnpx skills add Rewrite0/skills
+# 更新已安装的全局 Skill
+pnpx skills update -g
 ```
 
-## 目录结构
+## 维护
 
-```text
-.
-├── custom/              # 本仓库自己维护的 Skills
-│   └── <skill-name>/
-│       └── SKILL.md
-├── skills/              # 由 custom/ 和 sources/ 合并生成的发布目录
-│   └── <skill-name>/
-│       └── SKILL.md
-├── sources/             # 外部 Skill 项目（Git submodules）
-├── scripts/              # 同步和校验脚本
-├── skills.config.json    # 来源项目与 Skill 路径映射
-├── .gitmodules
-└── README.md
-```
-
-`sources/` 只保存外部项目的 submodule，`custom/` 保存本仓库自己维护的 Skills；真正供安装器发现和安装的内容位于 `skills/`。
-`skills/` 是同步生成目录，不应直接修改。安装器不会递归拉取 submodule，因此外部 Skill 必须同步到发布目录。
-
-## 管理来源和同步
-
-初始化外部来源：
+需要 Node.js >= 22.18.0 和 pnpm。
 
 ```bash
-pnpm run sources:init
+pnpm install
 ```
 
-同步当前锁定的 submodule 版本，并根据 `custom/` 与 `skills.config.json` 清理发布目录：
+| 路径 | 用途 |
+| --- | --- |
+| `skills/` | 提交到仓库的 Skill 发布目录 |
+| `sources/` | 外部仓库的本地缓存，不提交 |
+| `meta.json` | 来源仓库及 Skill 选择配置 |
+| `scripts/cli.ts` | 来源管理、同步与校验 |
 
-```bash
-pnpm run sync
-# 只同步一个 Skill
-pnpm run sync -- tdd
+### 来源配置
+
+在 `meta.json` 中配置来源。`skills` 的键是 Skill 名称，值是来源仓库中的相对目录：
+
+```json
+{
+  "sources": {
+    "mattpocock-skills": {
+      "url": "https://github.com/mattpocock/skills.git",
+      "skills": {
+        "tdd": "skills/engineering/tdd"
+      }
+    }
+  },
+  "manual": []
+}
 ```
 
-更新来源仓库并同步：
+- 省略 `skills` 或设置为 `{}`：启用该来源的全部 Skill，包括以后新增的 Skill。
+- 如需停用来源，直接从 `sources` 中移除该来源。
+- 可选填 `branch`：指定更新分支，默认使用远端默认分支。
+
+已登记的来源需要调整 Skill 时，编辑对应来源的 `skills` 映射，然后运行 `pnpm run sync`。省略 `skills` 或设置为空对象都会启用全部 Skill；如需停用来源，直接移除该来源。
+
+### 新增来源
 
 ```bash
-pnpm run update
-```
-
-新增外部来源时，使用脚本添加 submodule。脚本会按照 `<用户名>-<仓库名>` 自动推断来源目录名：
-
-```bash
+# 选取部分 Skill
+pnpm run sources:add https://github.com/example/skills --skills skill-a,skill-b
+# 启用全部 Skill
 pnpm run sources:add https://github.com/example/skills
+# 指定分支
+pnpm run sources:add https://github.com/example/skills --branch main --skills skill-a
 ```
 
-上面的仓库会添加到:
+命令会克隆来源、写入配置并同步，来源名称默认为 `<用户名>-<仓库名>`。
 
-```text
-sources/example-skills
-```
-
-脚本会自动扫描仓库中的全部 `SKILL.md`，并将所有 Skill 登记到
-`skills.config.json`。如果只需要其中一部分，可以使用 `--skills`：
+### 同步和更新
 
 ```bash
-pnpm run sources:add https://github.com/example/skills \
-  --skills skill-a,skill-b
-```
-
-也可以指定来源分支：
-
-```bash
-pnpm run sources:add https://github.com/example/skills --branch main
-```
-
-脚本会执行 `git submodule add`、发现 Skill、更新 `skills.config.json`，并自动同步到
-`skills/` 发布目录。
-
-外部来源的修改应在来源仓库中完成，不要直接修改 `skills/<skill-name>/` 的同步副本。
-
-对于没有外部来源、由本仓库维护的 Skill，直接将完整目录放入
-`custom/<skill-name>/`，并确保其中存在 `SKILL.md`。运行 `pnpm run sync` 后会发布到
-`skills/<skill-name>/`。如果从配置或 `custom/` 中删除 Skill，下一次同步也会从 `skills/` 中移除对应目录。
-
-## 常用 scripts
-
-```bash
-# 检查 Skill 文件和 CLI 清单
-pnpm run check
-
-# 单独检查 Skill 目录与 frontmatter
-pnpm run skills:check
-
-# 查看仓库中的可安装 Skills
-pnpm run skills:list
-
-# 使用 skills CLI 添加 Skill
-pnpm run skills:add -- --skill tdd --global
-
-# 初始化、同步或更新外部 submodules
+# 初始化来源缓存
 pnpm run sources:init
+# 从当前缓存同步
 pnpm run sync
+# 获取上游更新并同步
 pnpm run update
+# 只更新并同步指定 Skill
+pnpm run update tdd
+```
 
-# 校验维护脚本
+`sync` 也支持指定 Skill；`sources:init` 和 `sources:update` 支持指定来源名称。`sources:update` 只更新缓存。
+
+外部 Skill 应在上游修改后重新同步；缓存有本地修改时更新会停止。手写 Skill 直接维护在 `skills/<name>/`，并将名称登记到 `manual` 数组中。
+
+### 校验
+
+```bash
+# 类型、发布文件和安装清单
+pnpm run check
+# 脚本 lint
 pnpm run lint
 ```
 
-## GitHub Actions
+校验无需来源缓存；全部启用来源的发现、重名检查和目录清理由同步完成。更多命令见 `node scripts/cli.ts --help`。
 
-`.github/workflows/check.yml` 会在 push、Pull Request 和手动触发时校验 Skill 文件及 CLI 清单。
+## 自动化
 
-`.github/workflows/update-skills.yml` 每周一自动更新外部 submodule，同步发布目录并创建更新 Pull Request；也可以在 GitHub Actions 页面手动运行。
-
-当前已导入本机已有 Skills；其中可识别来源的 Skill 已通过 `sources/` 下的 Git
-submodule 管理，后续应在本仓库维护和提交来源指针及同步后的 `skills/` 内容。
+GitHub Actions 在 push 和 Pull Request 时校验，每周更新外部 Skill 并创建更新 PR，也支持手动触发。

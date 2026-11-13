@@ -1,0 +1,90 @@
+{
+  "sources": {
+    "alova-skills": {
+      "url": "https://github.com/alovajs/skills.git",
+      "skills": {
+        "alova-client-usage": "skills/alova-client-usage",
+        "alova-server-usage": "skills/alova-server-usage",
+        "alova-wormhole-usage": "skills/alova-wormhole-usage"
+      }
+    },
+    "antfu-skills": {
+      "url": "https://github.com/antfu/skills.git",
+      "skills": {
+        "antfu": "skills/antfu",
+        "antfu-simplify": "skills/antfu-simplify",
+        "antfu-query": "skills/antfu-query",
+        "pinia": "skills/pinia",
+        "pnpm": "skills/pnpm",
+        "unocss": "skills/unocss",
+        "vite": "skills/vite",
+        "vitest": "skills/vitest",
+        "vue": "skills/vue"
+      }
+    },
+    "mattpocock-skills": {
+      "url": "https://github.com/mattpocock/skills.git",
+      "skills": {
+        "domain-modeling": "skills/engineering/domain-modeling",
+        "handoff": "skills/productivity/handoff",
+        "tdd": "skills/engineering/tdd",
+        "codebase-design": "skills/engineering/codebase-design"
+      }
+    },
+    "vercel-skills": {
+      "url": "https://github.com/vercel-labs/skills.git",
+      "skills": {
+        "find-skills": "skills/find-skills"
+      }
+    },
+    "astrolicious-agent-skills": {
+      "url": "https://github.com/astrolicious/agent-skills.git",
+      "skills": {
+        "astro": "skills/astro"
+      }
+    },
+    "ui-ux-pro-max-skill": {
+      "url": "https://github.com/nextlevelbuilder/ui-ux-pro-max-skill.git",
+      "skills": {
+        "ui-ux-pro-max": ".claude/skills/ui-ux-pro-max"
+      }
+    },
+    "open-circle-agent-skills": {
+      "url": "https://github.com/open-circle/agent-skills.git",
+      "skills": {
+        "valibot": "skills/valibot"
+      }
+    },
+    "juliusbrussee-caveman": {
+      "url": "https://github.com/juliusbrussee/caveman",
+      "skills": {
+        "caveman": "skills/caveman"
+      }
+    },
+    "denoland-skills": {
+      "url": "https://github.com/denoland/skills",
+      "skills": {
+        "deno": "skills/deno"
+      }
+    },
+    "sequential-thinking-skill": {
+      "url": "https://github.com/thedotmack/sequential-thinking-skill.git",
+      "skills": {
+        "think-different": "think-different"
+      }
+    },
+    "anthropics-skills": {
+      "url": "https://github.com/anthropics/skills",
+      "skills": {
+        "skill-creator": "skills/skill-creator"
+      }
+    },
+    "chokcoco-coco-skill-hub": {
+      "url": "https://github.com/chokcoco/coco-skill-hub",
+      "skills": {
+        "coco-humanizer-zh": ".agents/skills/coco-humanizer-zh"
+      }
+    }
+  },
+  "manual": []
+}
